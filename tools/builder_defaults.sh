@@ -203,7 +203,7 @@ if [ -z "${BUILTDATESTRING}" ]; then
 fi
 echo "$BUILTDATESTRING" > $BUILTDATESTRINGFILE
 
-STAGING_HOSTNAME=${STAGING_HOSTNAME:-"release-staging.netgate.com"}
+STAGING_HOSTNAME=${STAGING_HOSTNAME:-"release-staging.defensebolt.local"}
 
 # Poudriere
 export ZFS_TANK=${ZFS_TANK:-"zroot"}
@@ -335,7 +335,7 @@ export VARIANTUPDATES=""
 
 # Rsync data to send snapshots
 if [ -n "${_IS_RELEASE}" -o -n "${SKIP_FINAL_RSYNC}" ]; then
-	export RSYNCIP=${RSYNCIP:-"release-staging.netgate.com"}
+	export RSYNCIP=${RSYNCIP:-"release-staging.defensebolt.local"}
 	export RSYNCUSER=${RSYNCUSER:-"wwwsync"}
 	export RSYNCPATH=${RSYNCPATH:-"/staging/ce/images"}
 else
